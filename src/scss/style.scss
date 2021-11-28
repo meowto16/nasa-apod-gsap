@@ -1,0 +1,142 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100%;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  clip-path: circle(100%);
+
+  z-index: 9999;
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  z-index: 10;
+
+  &__change {
+    position: absolute;
+    top: 50%;
+    font-size: 48px;
+    z-index: 15;
+
+    &--prev {
+      left: 0;
+      transform: translateY(-50%) translateX(-25%) rotate(90deg);
+    }
+
+    &--next {
+      right: 0;
+      transform: translateY(-50%) translateX(0%) rotate(-90deg);
+    }
+  }
+
+  &__change-btn {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    opacity: 0.9;
+    transition: 0.15s ease-in opacity;
+    cursor: pointer;
+
+    font-size: 48px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__html {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+}
+
+.nasa {
+  width: 100%;
+  height: 100%;
+
+  &__bg {
+    height: 100%;
+    position: relative;
+  }
+
+  &__bg-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__about {
+    position: absolute;
+    z-index: 10;
+    bottom: 10%;
+    left: 50%;
+    width: 80vw;
+    max-width: 990px;
+    transform: translateX(-50%);
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+    animation: aboutAnimate;
+    text-align: center;
+
+    font-family: 'Oswald', sans-serif;
+    color: #f0f0f0;
+  }
+
+  &__date {
+    font-size: 36px;
+    letter-spacing: 6px;
+    margin-top: 24px;
+    display: block;
+    color: #afafaf;
+  }
+
+  &__title {
+    font-size: 72px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+  }
+
+  &__desc {
+    display: none;
+  }
+}
